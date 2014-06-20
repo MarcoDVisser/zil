@@ -56,12 +56,12 @@ qzil <- function(q,mu=0,b=1,p=1){
 
   qden <- c(pzil(0-.Machine$double.eps,mu=mu,b=b,p=p),
             pzil(0,mu=mu,b=b,p=p))
-  
-  x <- ifelse(q>qden[1]&q<qden[2],0,
-                   ifelse(q<=qden[1],
-                          qlp(q/(1/(1+1)),mu=mu,b=b),
-                          qlp((q-diff(qden))/(1/(1+1)),mu=mu,
-                              b=b)))
+
+  x <- q
+  x[q>qden[1]&q<qden[2]] <- 0
+  x[q<=qden[1]] <- qlp(q[q<=qden[1]]/(1/(1+1)),mu=mu,b=b)
+  x[q>=qden[2]] <- qlp((q[q>=qden[2]]-diff(qden))/(1/(1+1)),mu=mu,b=b)
+
   return(x)
 }
 
@@ -77,4 +77,6 @@ rzil <- function(n,mu=0,b=1,p=1){
 }
 
 ## Helper function in qzil
-qlp <-function(q,mu,b) mu-b*sign(q-0.5)*log(1-2*abs(q-0.5))
+qlp <-function(q,mu,b) {
+  mu-b*sign(q-0.5)*log(1-2*abs(q-0.5))
+}
