@@ -33,10 +33,7 @@ dzil <- function(x,mu=0,b=1,p=1){
  
 }
 
-##' Density, distribution function, quantile function and random
-##' generation for the Zero Inflated Laplace distribution with mean equal
-##' to 'mu', shape 'b' and zero inflation 'p'. 
-##'
+##' Distribution function \code{pzil}
 ##' @rdname dzil
 ##' @export
 pzil <- function(x,mu=0,b=1,p=1){
@@ -49,10 +46,7 @@ pzil <- function(x,mu=0,b=1,p=1){
   ifelse(x>=0,plp+(1-(p+1)^(-1)),plp)
 }
 
-##' Density, distribution function, quantile function and random
-##' generation for the Zero Inflated Laplace distribution with mean equal
-##' to 'mu', shape 'b' and zero inflation 'p'. 
-##'
+##' Quantile function \code{qzil} 
 ##' @rdname dzil
 ##' @export
 qzil <- function(q,mu=0,b=1,p=1){
@@ -71,9 +65,7 @@ qzil <- function(q,mu=0,b=1,p=1){
   return(x)
 }
 
-##' Density, distribution function, quantile function and random
-##' generation for the Zero Inflated Laplace distribution with mean equal
-##' to 'mu', shape 'b' and zero inflation 'p'. 
+##' Random number generator \code{rzil}
 ##'
 ##' @rdname dzil
 ##' @export
@@ -85,5 +77,4 @@ rzil <- function(n,mu=0,b=1,p=1){
 }
 
 ##' Helper function in qzil
-##' @rdname dzil
 qlp <-function(q,mu,b) mu-b*sign(q-0.5)*log(1-2*abs(q-0.5))
