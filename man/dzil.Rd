@@ -2,7 +2,6 @@
 \name{dzil}
 \alias{dzil}
 \alias{pzil}
-\alias{qlp}
 \alias{qzil}
 \alias{rzil}
 \title{The Zero Inflated Laplace}
@@ -14,8 +13,6 @@ pzil(x, mu = 0, b = 1, p = 1)
 qzil(q, mu = 0, b = 1, p = 1)
 
 rzil(n, mu = 0, b = 1, p = 1)
-
-qlp(q, mu, b)
 }
 \arguments{
 \item{mu}{the mean of the non-zero density}
@@ -35,8 +32,6 @@ Distribution function \code{pzil}
 Quantile function \code{qzil}
 
 Random number generator \code{rzil}
-
-Helper function in qzil
 }
 \details{
 The mean 'mu' sets the central tendency of the Laplace, with "b"

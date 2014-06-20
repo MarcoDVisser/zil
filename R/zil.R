@@ -76,5 +76,5 @@ rzil <- function(n,mu=0,b=1,p=1){
   
 }
 
-##' Helper function in qzil
+## Helper function in qzil
 qlp <-function(q,mu,b) mu-b*sign(q-0.5)*log(1-2*abs(q-0.5))
