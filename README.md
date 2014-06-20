@@ -1,7 +1,7 @@
 `zil` The Zero Inflated Laplace Distribution
 ===
 
-The `zil` package extends R with the Zero Inflated Laplace Distribution and provides functions for calculation of the density, distribution and quantile functions including a random number generation. The Zero Inflated Laplace is a flexible distribution used for e.g. meassurment error modeling where where a fraction (1/(1+p)) of errors can be zero, while also allowing for potential bias (parameter 'mu') and large spread in errors (parameter 'b').
+The `zil` package extends R with the Zero Inflated Laplace Distribution and provides functions for calculation of the density, distribution and quantile functions including random number generation. The Zero Inflated Laplace is a flexible distribution used for e.g. meassurment error modeling where where a fraction (1/(1+p)) of errors can be zero, while also allowing for potential bias (parameter 'mu') and large spread in errors (parameter 'b').
 
 
 ## Installation
