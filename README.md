@@ -30,5 +30,5 @@ lines(-5:15,dzil(-5:15,mu=5),lwd=3,col='green')
 ```
 ![](http://i.imgur.com/QxeArJm.png)
 
-Here parameters include, the  mean 'mu' sets the central tendency of the Laplace, with "b"  defining the spread around 'mu'. The zero inflation parameter  "p", defines the point mass density above 0. The density under  zero relates to p as (1/(1+1)) while the probabilty density not  equal to zero is given by 1-(1/(1+1)). The function "rzil" is based  on the inverse cummulative function, and translates uniform random numbers to their zil equivalents. 
+Here parameters include, the  mean 'mu' sets the central tendency of the Laplace, with "b"  defining the spread around 'mu'. The zero inflation parameter  "p", defines the point mass density at 0. The density at zero relates to p as (1/(p+1)) while the probabilty density not  equal to zero is given by 1-(1/(p+1)). The function "rzil" is based  on the inverse cummulative function, and translates uniform random numbers to their zil equivalents. 
 

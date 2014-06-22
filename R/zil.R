@@ -41,9 +41,9 @@ pzil <- function(x,mu=0,b=1,p=1){
   if(sum(p<0)+sum(b<0)){stop("b or p < 0")}
   
   plp <- ifelse(x<mu,.5*exp((x-mu)/b),
-                1-(0.5*exp(-((x-mu)/b)))) *(1/(p+1))
+                1-(0.5*exp(-((x-mu)/b)))) *(1-(p+1)^(-1))
 
-  ifelse(x>=0,plp+(1-(p+1)^(-1)),plp)
+  ifelse(x>=0,plp+(1/(p+1)),plp)
 }
 
 ##' Quantile function \code{qzil} 
