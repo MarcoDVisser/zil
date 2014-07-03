@@ -2,6 +2,7 @@
 \name{dzil}
 \alias{dzil}
 \alias{pzil}
+\alias{qil}
 \alias{qzil}
 \alias{rzil}
 \title{The Zero Inflated Laplace}
@@ -13,6 +14,8 @@ pzil(x, mu = 0, b = 1, p = 1)
 qzil(q, mu = 0, b = 1, p = 1)
 
 rzil(n, mu = 0, b = 1, p = 1)
+
+qil(q, mu = 0, b = 1, p = 1)
 }
 \arguments{
 \item{mu}{the mean of the non-zero density}
@@ -32,13 +35,15 @@ Distribution function \code{pzil}
 Quantile function \code{qzil}
 
 Random number generator \code{rzil}
+
+Quantile function \code{qzil}
 }
 \details{
 The mean 'mu' sets the central tendency of the Laplace, with "b"
 defining the spread around 'mu'. The zero inflation parameter
 "p", defines the point mass density above 0. The density under
-zero relates to p as (1/(1+1)) while the probabilty density not
-equal to zero is given by 1-(1/(1+1)). The function "rzil" is based
+zero relates to p as (1/(p+1)) while the probabilty density not
+equal to zero is given by 1-(1/(p+1)). The function "rzil" is based
 on the inverse cummulative function, and translates uniform
 random numbers to their zil equivalents.
 }

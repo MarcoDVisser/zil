@@ -85,13 +85,12 @@ qlp <-function(q,mu,b) {
 
 ##' Density, distribution function, quantile function and random
 ##' generation for the Inflated Laplace distribution with mean equal
-##' to 'mu', shape 'b' and zero inflation 'p'. 
+##' to 'mu', shape 'b' and inflation 'p' at point 'mu'.
 ##'
 ##' The mean 'mu' sets the central tendency of the inflated Laplace, with "b"
 ##' defining the spread around 'mu'. The inflation parameter
-##' "p", defines the point mass density inflation above mu. The inflated
-##' density under zero relates to p as (1/(p+1)) while the probabilty density
-##' not equal to zero is given by 1-(1/(p+1)). The function "rzil" is based
+##' "p", defines the point mass density inflation above mu.
+##' The function "ril" is based
 ##' on the inverse cummulative function, and translates uniform
 ##' random numbers to their zil equivalents. 
 ##' 
@@ -100,10 +99,10 @@ qlp <-function(q,mu,b) {
 ##' (must be >0).
 ##' @param p the inflation parameter (must be >0) 
 ##' @author Marco D. Visser
-##' @rdname dzil
+##' @rdname dil
 ##' @examples
 ##' curve(dnorm(x,mu=5),-2,10)
-##' x<-rzil(100,mu=5)
+##' x<-ril(100,mu=5)
 ##' hist(x)
 ##' @title The Zero Inflated Laplace 
 ##' @seealso \code{\link{dnorm}}, \code{\link{dunif}},

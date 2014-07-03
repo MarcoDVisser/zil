@@ -1,7 +1,7 @@
 `zil` The Zero Inflated Laplace Distribution
 ===
 
-The `zil` package extends R with the Zero Inflated Laplace Distribution and provides functions for calculation of the density, distribution and quantile functions including random number generation. The Zero Inflated Laplace is a flexible distribution used for e.g. meassurment error modeling where where a fraction (1/(1+p)) of errors can be zero, while also allowing for potential bias (parameter 'mu') and large spread in errors (parameter 'b').
+The `zil` package extends R with the Zero Inflated Laplace Distribution and provides functions for calculation of the density, distribution and quantile functions including random number generation. The Zero Inflated Laplace is a flexible distribution used for e.g. meassurment error modeling where where a fraction (1/(1+p)) of errors can be zero, while also allowing for potential bias (parameter 'mu') and large spread in errors (parameter 'b'). 
 
 
 ## Installation
@@ -30,5 +30,14 @@ lines(-5:15,dzil(-5:15,mu=5),lwd=3,col='green')
 ```
 ![](http://i.imgur.com/QxeArJm.png)
 
-Here parameters include, the  mean 'mu' sets the central tendency of the Laplace, with "b"  defining the spread around 'mu'. The zero inflation parameter  "p", defines the point mass density at 0. The density at zero relates to p as (1/(p+1)) while the probabilty density not  equal to zero is given by 1-(1/(p+1)). The function "rzil" is based  on the inverse cummulative function, and translates uniform random numbers to their zil equivalents. 
+Here parameters include, the  mean 'mu' sets the central tendency of the Laplace, with "b"  defining the spread around 'mu'. The zero inflation parameter  "p", defines the point mass density at 0. The density at zero relates to p as (1/(p+1)) while the probabilty density not  equal to zero is given by 1-(1/(p+1)). The function "rzil" is based  on the inverse cummulative function, and translates uniform random numbers to their zil equivalents.
 
+## Other formulations
+A second set of functions are the centralized inflated laplace. Here the inflation is not on zero, but may be centred at mu. These can be used for modelling meassurement error centred arround mu. The parameter p then defines the fraction of instances that mu was meassured exactly as (1/(p+1)). 
+
+```r
+# using the density function and random numbers
+x<-ril(1000,mu=5)
+hist(x,freq=FALSE)
+lines(-5:15,dil(-5:15,mu=5),lwd=3,col='green')
+```
